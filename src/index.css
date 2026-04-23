@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+:root {
+  --color-primary: #E6B7A9; /* Rose Gold */
+  --color-bg: #F8F4F1; /* Ivory / Cream */
+  --color-secondary: #D8A7A0; /* Soft Nude Pink */
+  --color-text: #1A1A1A; /* Matte Black */
+  --color-accent: #D4AF37; /* Champagne Gold */
+  --color-section: #EADCD6; /* Warm Beige */
+
+  --font-heading: 'Cinzel', serif;
+  --font-body: 'Inter', sans-serif;
+
+  --transition-smooth: all 0.3s ease-in-out;
+  --transition-fast: all 0.2s ease-in-out;
+  --shadow-soft: 0 4px 20px rgba(0,0,0,0.05);
+  --shadow-hover: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  color: var(--color-text);
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition-smooth);
+}
+
+ul {
+  list-style: none;
+}
+
+/* Glassmorphism */
+.glass {
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+/* Typography styles */
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  letter-spacing: 2px;
+}
+
+/* Utility layout */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.flex { display: flex; }
+.items-center { align-items: center; }
+.justify-between { justify-content: space-between; }
+.justify-center { justify-content: center; }
+.flex-col { flex-direction: column; }
+.gap-1 { gap: 0.5rem; }
+.gap-2 { gap: 1rem; }
+.gap-3 { gap: 1.5rem; }
+.gap-4 { gap: 2rem; }
+
+/* Global Buttons */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 2.5rem;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  border: none;
+  border-radius: 2px;
+  transition: var(--transition-smooth);
+}
+
+.btn-primary {
+  background-color: var(--color-text);
+  color: #fff;
+  border: 1px solid var(--color-text);
+}
+.btn-primary:hover {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  border: 1px solid var(--color-text);
+  color: var(--color-text);
+}
+.btn-secondary:hover {
+  background-color: var(--color-text);
+  color: var(--color-bg);
+  transform: translateY(-2px);
+}
+
+.btn-accent {
+  background-color: var(--color-accent);
+  color: #fff;
+}
+.btn-accent:hover {
+  background-color: #bfa12a;
+}
+
+/* Basic structure */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+}
+
+/* Forms */
+.input-field {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  border: 1px solid rgba(0,0,0,0.1);
+  background: transparent;
+  color: var(--color-text);
+  font-family: var(--font-body);
+  transition: var(--transition-fast);
+  outline: none;
+}
+.input-field:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(230, 183, 169, 0.2);
+}
+
+/* Image generation placeholder styles */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Category and Product Card Hover Effects */
+.category-card:hover .category-img {
+  transform: scale(1.05);
+}
+
+.product-card {
+  background: #fff;
+  transition: var(--transition-smooth);
+  position: relative;
+  overflow: hidden;
+  border-radius: 2px;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+}
+
+.product-card:hover .product-card-img {
+  transform: scale(1.05);
+}
+
+.product-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
